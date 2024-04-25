@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rollers</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+            min-height: 100vh;
+        }
+
+        .dice-img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 20px auto;
+            
+        }
+
+        .app-title {
+            text-align: center;
+        }
+
+        .btn-roller {
+            width: 250px;
+            display: block;
+            margin: 20px auto;
+            font-size: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-image: linear-gradient(135deg, #FAD7A1 10%, #E96D71 100%);
+            color: #fff;
+            cursor: pointer;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <h1 class="app-title">Roller the Dice</h1>
+
+    <img src="Default.png" alt="dice" class="dice-img" id="dice-img" />
+
+    <button class="btn-roller" onclick="roller()">Dice Roller</button>
+
+    <script>
+        function roller() {
+            const min = 1;
+            const max = 6;
+
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+
+            const imgElement = document.getElementById('dice-img');
+
+            switch (randomNumber) {
+                case 1:
+                    imgElement.src = 'One.png';
+                    break;
+                case 2:
+                    imgElement.src = 'Two.png';
+                    break;
+                case 3:
+                    imgElement.src = 'Three.png';
+                    break;
+                case 4:
+                    imgElement.src = 'Four.png';
+                    break;
+                case 5:
+                    imgElement.src = 'Five.png';
+                    break;
+                case 6:
+                    imgElement.src = 'six.png';
+                    break;
+                default:
+                    imgElement.src = 'Default.png';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
